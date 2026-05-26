@@ -1,0 +1,112 @@
+/* 
+   Stopwatch Styles
+   
+   Key components:
+   - Body: Sets the overall page layout and background
+   - Stopwatch container: Centers the stopwatch on the page
+   - Display: Styles the time display
+   - Control buttons: Defines the appearance of start, stop, and reset buttons
+
+   Feel free to modify these styles to customize the look of your stopwatch!
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: sans-serif;
+  background-color: #f5f5f5;
+}
+label[for="theme"] {
+   position: fixed;
+   top: 1rem;
+   right: 5rem;
+   font-size: 0.9rem;
+   font-width: 500;
+   cursor: pointer;
+   line-height: 28px;
+}
+input[type="checkbox"] {
+  appearance: none;
+  width: 62px;
+  height: 28px;
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  background: #ccc;
+  border-radius: 28px;
+  transition: background 0.3s ease;
+}
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  top: 3px;
+  left: 3px;
+  transition: transform 0.3s ease;
+}
+input[type="checkbox"]:checked {
+  background: #333;
+}
+input[type="checkbox"]:checked:before {
+  transform: translateX(34px);
+}
+body.dark {
+  background-color: black;
+  color: white;
+}
+.stopwatch {
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 100%;
+  max-width: 600px;
+  background-color: #76abae;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+#display {
+  font-size: 6.25rem;
+  text-align: center;
+  font-family: monospace;
+}
+.controls {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+.btn {
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  padding: 1rem 3rem;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.btn:hover {
+  transform: scale(1.1);
+}
+.btn:active {
+   transform: scale(1);
+   filter: brightness(0.8);
+}
+.start {
+  background-color: green;
+}
+.stop {
+  background-color: red;
+}
+.reset {
+  background-color: blue;
+}
